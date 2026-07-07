@@ -32,16 +32,19 @@ public class WelcomePage {
                 System.out.println("You logged in at " + now);
                 break;
             }
-            if (pass.equals("ABCD") && name.equals("ABCD") ){
+            else if (pass.equals("ABCD") && name.equals("ABCD") ){
                 System.out.print("Would you like to create a new acc? (Y/N): ");
-                String ans = scanner.next();
-                System.out.print("Create a new username: ");
-                String name2 = scanner.nextLine();
-                scanner.nextLine();
-                System.out.print("Create a new password: ");
-                String pass2 = scanner.nextLine();
-                name = name2;
-                pass = pass2;
+                String ans = scanner.nextLine();
+
+                if (ans.equals("Y")) {
+                    System.out.print("Create a new username: ");
+                    userName = scanner.nextLine();
+                    System.out.print("Create a new password: ");
+                    password = scanner.nextLine();
+                    System.out.println("Your user name is: " + userName + " and your password is: " + password);
+                }
+                else
+                    break;
             }
             else{
                 counter --;
