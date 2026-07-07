@@ -53,7 +53,7 @@ public class WelcomePage {
                 else if (counter == 0) {
                     System.out.println("INCORRECT USERNAME OR PASSWORD.");
                     System.out.println("*YOU HAVE " + counter + " TRIALS LEFT*");
-                    System.out.println("*LOGIN SESSION TERMINATED!*");
+                    System.out.println("*LOGIN SESSION TERMINATED! Ncese, lol*");
                     break;
                 }
                 else {
