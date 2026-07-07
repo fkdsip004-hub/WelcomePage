@@ -11,7 +11,7 @@ public class WelcomePage {
         userName = userName.trim();
         password = password.trim();
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)");
+        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)❤️");
         System.out.println("LOGIN");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
