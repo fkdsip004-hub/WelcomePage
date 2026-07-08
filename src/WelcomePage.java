@@ -30,11 +30,13 @@ public class WelcomePage {
                 System.out.println("WELCOME! " + name);
                 Date now = new Date();
                 System.out.println("You logged in at " + now);
+                counter = 5;
                 break;
             }
             else if (pass.equals("ABCD") && name.equals("ABCD") ){
                 System.out.print("Would you like to create a new acc? (Y/N): ");
                 String ans = scanner.nextLine();
+                ans = ans.toUpperCase();
 
                 if (ans.equals("Y")) {
                     System.out.print("Create a new username: ");
@@ -42,6 +44,8 @@ public class WelcomePage {
                     System.out.print("Create a new password: ");
                     password = scanner.nextLine();
                     System.out.println("Your user name is: " + userName + " and your password is: " + password);
+                    counter = 5;
+
                 }
                 else
                     break;
@@ -61,18 +65,13 @@ public class WelcomePage {
                 }
                 else {
                     System.out.println("INCORRECT USERNAME OR PASSWORD PLEASE TRY AGAIN");
-                    System.out.println("CAREFUL, YOU HAVE " + counter + " TRIAL LEFT!");
+                    System.out.println("CAREFUL, YOU HAVE " + counter + " TRIAL LEFT!!!");
                 }
 
             }
 
         }
-        if (counter == 0){
-            System.out.print("Would you like to create a new acc? (Y/N): ");
-            String ans = scanner.next();
 
-
-        }
         scanner.close();
     }
 }
