@@ -2,53 +2,58 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class WelcomePage {
-    public static void main(String[] args){
 
-        Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
+    static void main(String[] args){
+
+
         int counter = 5;
         String password = "Ndabile101";
         String userName = "Konke.Ndabile";
         userName = userName.trim();
         password = password.trim();
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)❤️");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)");
         System.out.println("LOGIN");
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Type ABCD(For password & username) to registerer.");
+        System.out.println("--------------------------------------------------------");
         System.out.println();
 
 
         while (true){
-
-            System.out.print("Enter UserName (Type ABCD if you're not registered.): ");
-            String name = scanner.nextLine();
-            name = name.trim();
-            System.out.print("Enter Password (Type ABCD if you're not registered.): ");
-            String pass = scanner.nextLine();
-            pass = pass.trim();
-
-            if (pass.equals(password) && userName.equals(name) ){
-                System.out.println("WELCOME! " + name);
+            System.out.println("*************************");
+            System.out.print("Enter UserName: ");
+            String userNameAttempt = scanner.nextLine();
+            userNameAttempt = userNameAttempt.trim();
+            System.out.print("Enter Password: ");
+            String passwowrdAttempt = scanner.nextLine();
+            passwowrdAttempt = passwowrdAttempt.trim();
+            System.out.println("*************************");
+            if (passwowrdAttempt.equals(password) && userName.equals(userNameAttempt) ){
+                System.out.println("WELCOME! " + userNameAttempt);
                 Date now = new Date();
                 System.out.println("You logged in at " + now);
                 counter = 5;
                 break;
             }
-            else if (pass.equals("ABCD") && name.equals("ABCD") ){
+            else if (passwowrdAttempt.equals("ABCD") && userNameAttempt.equals("ABCD") ){
                 System.out.print("Would you like to create a new acc? (Y/N): ");
                 String ans = scanner.nextLine();
                 ans = ans.toUpperCase();
+                ans = ans.trim();
 
                 if (ans.equals("Y")) {
-                    System.out.print("Create a new username: ");
-                    userName = scanner.nextLine();
-                    System.out.print("Create a new password: ");
-                    password = scanner.nextLine();
-                    System.out.println("Your user name is: " + userName + " and your password is: " + password);
+                    String[] newCredentials = getCredentials();
+                    password = newCredentials[1];
+                    userName = newCredentials[0];
                     counter = 5;
 
+
                 }
-                else
+                else {
+                    System.out.println("GoodBye!");
                     break;
+                }
             }
             else{
                 counter --;
@@ -72,6 +77,22 @@ public class WelcomePage {
 
         }
 
-        scanner.close();
+
+    }
+
+
+    static String[] getCredentials() {
+        String[] credentials = new String[2];
+        System.out.print("Enter new username: ");
+        String newUsername = scanner.nextLine();
+
+        System.out.print("Enter new password: ");
+        String newPassword = scanner.nextLine();
+
+        credentials[0] = newUsername;
+        credentials[1] = newPassword;
+
+
+        return credentials;
     }
 }
