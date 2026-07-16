@@ -6,7 +6,7 @@ public class WelcomePage {
     static Scanner scanner = new Scanner(System.in);
     static void main(String[] args){
 
-
+        //testing pushing w the terminal
         int counter = 5;
         String password = "Ndabile101";
         String userName = "Konke.Ndabile";
@@ -94,5 +94,7 @@ public class WelcomePage {
 
 
         return credentials;
+
+
     }
 }
