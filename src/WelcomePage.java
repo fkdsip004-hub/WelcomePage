@@ -16,7 +16,7 @@ public class WelcomePage {
 
     static void main(String[] args){
 
-        //testing pushing w the terminal
+        //testing pushing w the terminal.
         int counter = 5;
         String password = "Ndabile101";
         String userName = "Konke.Ndabile";
