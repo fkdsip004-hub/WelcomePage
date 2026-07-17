@@ -4,6 +4,16 @@ import java.util.Scanner;
 public class WelcomePage {
 
     static Scanner scanner = new Scanner(System.in);
+
+    static void intro() {
+        System.out.println("---------------------------------------------------------");
+        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)");
+        System.out.println("LOGIN");
+        System.out.println("Type ABCD(For password & username) to registerer.");
+        System.out.println("--------------------------------------------------------");
+        System.out.println();
+    }
+
     static void main(String[] args){
 
         //testing pushing w the terminal
@@ -12,13 +22,8 @@ public class WelcomePage {
         String userName = "Konke.Ndabile";
         userName = userName.trim();
         password = password.trim();
-        System.out.println("---------------------------------------------------------");
-        System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)");
-        System.out.println("LOGIN");
-        System.out.println("Type ABCD(For password & username) to registerer.");
-        System.out.println("--------------------------------------------------------");
-        System.out.println();
 
+        intro();
 
         while (true){
             System.out.println("*************************");
@@ -36,7 +41,7 @@ public class WelcomePage {
                 counter = 5;
                 break;
             }
-            else if (passwowrdAttempt.equals("ABCD") && userNameAttempt.equals("ABCD") ){
+            else if (passwowrdAttempt.equalsIgnoreCase("ABCD") && userNameAttempt.equalsIgnoreCase("ABCD") ){
                 System.out.print("Would you like to create a new acc? (Y/N): ");
                 String ans = scanner.nextLine();
                 ans = ans.toUpperCase();
@@ -46,6 +51,7 @@ public class WelcomePage {
                     String[] newCredentials = getCredentials();
                     password = newCredentials[1];
                     userName = newCredentials[0];
+                    intro();
                     counter = 5;
 
 
