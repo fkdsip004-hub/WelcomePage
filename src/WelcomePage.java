@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 public class WelcomePage {
@@ -8,7 +9,7 @@ public class WelcomePage {
     static void intro() {
         System.out.println("---------------------------------------------------------");
         System.out.println("WELCOME TO STIX INDUSTRIES4(●'◡'●)");
-        System.out.println("LOGIN");
+        System.out.println("-------------------------LOGIN--------------------------");
         System.out.println("Type ABCD(For password & username) to registerer.");
         System.out.println("--------------------------------------------------------");
         System.out.println();
@@ -89,15 +90,30 @@ public class WelcomePage {
 
     static String[] getCredentials() {
         String[] credentials = new String[2];
-        System.out.print("Enter new username: ");
-        String newUsername = scanner.nextLine();
+        System.out.print("Would you like to create random credentials(Y/N): ");
+        String ans = scanner.nextLine().trim().toUpperCase();
 
-        System.out.print("Enter new password: ");
-        String newPassword = scanner.nextLine();
+        if (ans.equals("Y")){
+            Random random = new Random();
+            credentials[0] = "User" + random.nextInt(10000000);
+            credentials[1] = String.valueOf(random.nextInt(99999));
 
-        credentials[0] = newUsername;
-        credentials[1] = newPassword;
 
+            System.out.println("Your unique username is: " + credentials[0]);
+            System.out.println("Your unique code is: " + credentials[1]);
+        }
+        else{
+            System.out.print("Enter new username: ");
+            String newUsername = scanner.nextLine();
+
+            System.out.print("Enter new password: ");
+            String newPassword = scanner.nextLine();
+
+            credentials[0] = newUsername;
+            credentials[1] = newPassword;
+
+
+        }
 
         return credentials;
 
